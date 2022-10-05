@@ -20,6 +20,7 @@ namespace CadastroAluno.Models
             Nome = nome;
             Turma = turma;
 
+
         }
 
         public bool VerificaAprovacao()
