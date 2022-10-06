@@ -1,4 +1,6 @@
 ﻿using CadastroAluno.Contract;
+using CadastroAluno.Controllers;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,19 @@ namespace CadastroAluno.MVC.Test
 
         public AlunosControllerTest()
         {
+            AlunosController controller = new AlunosController(_repository.Object);
             _repository = new Mock<IAlunoRepository>();
         }
+        [Fact]
+        public async void Index_RetornaOkResult()
+        {
+            //arrange 
+            AlunosController controller = new AlunosController(_repository.Object);
+            //act
+            var alunos = await controller.Index();
+            //assert
+            Assert.IsType<ViewResult>(alunos);
+        }
+
     }
 }
