@@ -62,7 +62,7 @@ namespace CadastroAluno.Controllers
         // POST: Alunos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
             if (id == null)
             {
@@ -93,7 +93,7 @@ namespace CadastroAluno.Controllers
             }
             return View(aluno);
         }
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
             {

@@ -33,11 +33,39 @@ namespace CadastroAluno.MVC.Test
         {
             //arrange
             Aluno aluno = new Aluno();
+            aluno.Media = 10;
 
             //act
-            var result = aluno.VerificaAprovacao();
+           
             //assert
-            Assert.True(result);
+            Assert.True(aluno.VerificaAprovacao());
+        }
+
+        [Fact]
+        public void VerificaAprovacaoFalsa()
+        {
+            //Arrange
+
+            Aluno aluno = new Aluno();
+            aluno.Media = 4;
+            //Act
+
+            //Assert
+            Assert.False(aluno.VerificaAprovacao());
+        }
+
+        [Fact]
+        public void AtualizarMediaDoAluno()
+        {
+            //Arrange
+
+            Aluno aluno = new Aluno();
+            aluno.Media = 4;
+            //Act
+            aluno.AtualizaMedia(10);
+            //Assert
+            Assert.Equal(10, aluno.Media);
+
         }
 
 
