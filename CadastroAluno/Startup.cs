@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CadastroAluno.Data;
 using CadastroAluno.Repositories;
+using CadastroAluno.Contract;
 
 namespace CadastroAluno
 {
@@ -26,7 +27,7 @@ namespace CadastroAluno
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<AlunoRepository>();
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddControllersWithViews();
 
             services.AddDbContext<CadastroAlunoContext>(options =>
